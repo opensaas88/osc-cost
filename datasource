@@ -1,0 +1,4 @@
+http://prometheus-operated.default:9090
+
+namespace : default
+  SERVICE
