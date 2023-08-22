@@ -1,12 +1,17 @@
-helm upgrade --install osccost-tenat osccost \
+helm upgrade --install osccost-demo osccost \
   --repo git+https://github.com/outscale/osc-cost@helm/osccost?ref=v0.3.2 \
-  --namespace osccost-tenant \
+  --namespace osccost-demo \
   --create-namespace \
-  --set osccost.secret.oscAccessKey=xxxxxxxxxxxxxxxxxxxx \
-  --set osccost.secret.oscSecretKey=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
+  --set osccost.secret.oscAccessKey=xxx \
+  --set osccost.secret.oscSecretKey=xxxx \
   --set osccost.secret.oscRegion=eu-west-2 \
   --set osccost.ingress.enable=false \
   --set osccost.deployment.containers.resources.cpu.limits=1 \
   --set osccost.deployment.containers.resources.memory.limits=2Gi \
   --set osccost.deployment.containers.pullPolicy=IfNotPresent \
   --set osccost.deployment.containers.osccostExtraParams='--skip-resource Oos'
+
+
+helm plugin install https://github.com/aslafy-z/helm-git
+
+$bash
