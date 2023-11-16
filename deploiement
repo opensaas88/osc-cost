@@ -1,3 +1,5 @@
+prometheus-operator
+
 $bash
 
 helm upgrade --install osccost-demo osccost \
